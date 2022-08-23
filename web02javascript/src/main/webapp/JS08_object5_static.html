@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object5</title>
+    <script>
+        console.log("Hello Object5...");
+
+        // static
+
+        class Student {
+            static name = "kim";  // static 변수는 class이름으로 접근해야 한다.
+            constructor () {
+                console.log("Student()...");
+            }
+            static study() {  // static 매소드
+                console.log("static study()...");
+            }
+            static #yaja() {  // static private 매소드
+                console.log("static #yaja()...");
+            }
+        }
+        let st = new Student();
+        Student.name = "lee";
+        console.log(Student.name);
+        Student.study();
+
+        console.log("==============================");
+        class Person {
+            static age = 30;
+            constructor () {
+                console.log("Person()...");
+            }
+            static sleep(){
+                console.log("static sleep()...");
+                let p = new Person();
+                // static에서 static이 아닌 것을 가져올때는 자바와 동일하게 new를 통한 초기화를 통해서 가져와야 한다.
+                p.#natJam();
+            }
+            #natJam(){
+                console.log("private #natJam()...");
+            }
+        }
+        let p = new Person();
+        console.log(p);
+        console.log(Person.age);
+        Person.sleep();
+        
+
+
+        console.log("==============================");
+        class Car {
+            static price = 500;
+            model = "audi";
+            static { // static 초기화 블력
+                Car.price = 50000;
+                this.model = "BMW";
+            }
+            constructor () {
+                console.log("Car()...");
+            }
+            start() {
+                console.log("Start()...");
+                Car.turboON();
+                // static이 아닌 함수가 static을 가져오기 위해서는 '클래스.매소드이름 ' call해야한다.
+            }
+            static turboON() {
+                console.log("turboON()...");
+            }
+        }
+        let c = new Car();
+        console.log(c);
+        c.start();
+        console.log(Car.price);
+        console.log(Car.model);
+    </script>
+</head>
+<body>
+    <h3>Object5</h3>
+</body>
+</html>

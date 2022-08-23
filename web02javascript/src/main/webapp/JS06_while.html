@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>while</title>
+  <script>
+    console.log('hello while');
+
+    let count = 0;
+    while (count<10) {
+      if(count==8) break;
+      console.log(count);
+      count++;
+      if(count==4) {
+        count++;
+        continue
+      };
+    }
+
+    let x = 'y';
+    do {
+      console.log(x);
+      x = prompt(); // x를 입력받기
+    } while (x!="x");
+
+  </script>
+</head>
+<body>
+  <h3>while</h3>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 var_let_const2</title>
+    <script>
+        console.log("Hello...");
+
+        var a = 10;
+        console.log(a);
+        var a = 100;
+        console.log(a);
+
+        console.log("kor : " + kor);
+        // var변수는 전역에 쓰이기 때문에 if 안에 선언되었어도 밖에서 쓸 수 있다.
+
+        if(true) {
+          console.log("name : " + name2);
+          // var변수는 전체에 적용되지만 if문이 실행되기 전에 초기화가 안되어서 undefined가 출력된다.
+          var kor = 99;
+        }
+        var name2 = "kim";
+
+        let b = 10;
+        b = 20;
+        console.log(b);
+
+        if("kim") {
+          console.log("Hello : " + b);
+          // console.log("eng : " + eng);  아직 선언되지 않아 오류가 발생한다.
+          let math = 77;
+          console.log("math : " + math);
+        }
+        let eng = 88; // let은 자바의 변수 처럼 상위에서 하위로는 사용이 가능
+        // console.log("math : " + math); let은 블록을 벗어나서 사용이 안된다.
+
+        const c = 'aaa';
+        console.log(c);
+
+        // if(true) {
+        //   console.log("x1 :" + x);
+        //   // console.log("y : " + y);
+        // }
+        // y = 1000;
+
+        sleep();  // sleep : 프로그램의 실행을 지연시키기
+        function sleep() {
+          x = 10;
+          // var x = 10;  함수(function) 안에서의 var은 외부로 나갈수 없다.
+          console.log("x2 : " + x);
+        }
+        sleep();
+        console.log("x3 : " + x);
+    </script>
+</head>
+<body>
+    <h1>var</h1>
+    <h1>let</h1>
+    <h1>const</h1>
+</body>
+</html>

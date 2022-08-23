@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>fo2r</title>
+  <style>
+    span:nth-child(odd) {
+      color : blueviolet;
+    }
+    h3:nth-child(odd) {
+      color: rgb(72, 196, 132);
+    }
+  </style>
+  <script>
+    console.log("hello_for");
+
+    window.onload = function() {
+      let text = "";
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        text += i;
+      }
+      console.log(text);
+      let p_i = document.querySelector('#p_i');
+      p_i.innerHTML = text;
+      console.log('=============================');
+      
+      let text2 = "";
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        text2 += "<h3>" + i +"</h3>";
+      }
+      let p_i2 = document.querySelector('#p_i2');
+      p_i2.innerHTML = text2;
+      console.log('=============================');
+
+      let text3 = "";
+      for (let i = 0; i < 10; i++) {
+        console.log(i);
+        text3 += "<span>" + i +"</span>";
+      }
+      let p_i3 = document.querySelector('#p_i3');
+      p_i3.innerHTML = text3;
+    };
+</script>
+</head>
+
+<body>
+  <h3 id="p_i">for</h3>
+
+  <div id="p_i2">
+  </div>
+
+  <div id="p_i3">
+  </div>
+</body>
+
+</html>

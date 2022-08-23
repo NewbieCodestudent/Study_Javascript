@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object</title>
+    <script>
+        console.log("Hello Object...");
+        // [ , , ] : array
+        // {key:value, key:value} : object
+        let obj = {};
+        console.log(obj);
+
+        // 1. 값을 할당하는 방법
+        // 1-1 {}안에 직접입력
+        obj = { name: "kim", age: 33, arr: [11, 22, 33], vo: { id: "admin" }, fn: function () { } };
+        // key는 변수처럼 명시하면 된다.
+        // object는 여러 타입을 넣을 수 있으며 java의 map처럼 보따리의 형태로 순서가 없다.
+        console.log(obj);
+        
+        obj = {};
+        console.log(obj);
+        console.log("==============================");
+        
+        // 1-2 '[key] = value', '.key = value'형식으로 입력
+        obj["name"] = "lee";
+        console.log(obj);
+        console.log(obj["id"]);
+        obj["id"] = "admin";
+        console.log(obj);
+        console.log("==============================");
+        
+        // object의 값을 [key], .key로 호출할 수 있다.
+        console.log(obj["name"], obj["id"]);
+        console.log(obj.name, obj.id);
+        obj.arr = [11,22,33];
+        console.log(obj);
+        console.log("==============================");
+
+        // object안의 배열을 호출하기
+        for (const i in obj.arr) {
+            console.log(obj.arr[i]);
+        }
+        obj.sleep = function(){
+            // '=' 할당연산은 순서대로 실행하기 때문에 위에 변수가 오면 오류가 생긴다.
+            // var 변수와 차이점 (var은 전역에서 사용가능...)
+            console.log("sleep()...");
+        };
+        // '이름 + () + ;' 함수를 call하는 형식
+        obj.sleep();
+        
+        console.log("==============================");
+        // obj 안에 key 확인
+        console.log("name" in obj);
+        console.log("name2" in obj);
+
+        console.log("==============================");
+        // obj안에 key(속성)를 삭제
+        delete obj.name;
+        console.log("name" in obj);
+        
+        
+
+    </script>
+</head>
+
+<body>
+    <h3>Object</h3>
+</body>
+
+</html>

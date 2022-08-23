@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for</title>
+  <script>
+    console.log("hello_for");
+    console.log('===================');
+    
+    window.onload = function () {
+      let arr = [11, 22, 33];
+      let text = "";
+      
+      for (const i in arr) {
+        console.log(arr[i]);
+        text += "<tr><td>" + arr[i] +"</td></tr>";
+      }
+      let tb_arr = document.querySelector("#tb_arr");
+      tb_arr.innerHTML = text;
+      console.log('===================');
+
+      let obj = {name : 'kim', age : 33}
+      let text2 = "";
+      for (const key in obj) {
+        console.log(obj[key]);
+        text2 += "<td>" + obj[key] + "</td>";
+      };
+      let tb_obj = document.querySelector('#tb_obj');
+      tb_obj.innerHTML = text2;
+      console.log('===================');
+
+
+      let objs = [{name : 'kim', age : 33},{name : 'lee', age : 44},{name : 'park', age : 55}];
+      let text3='';
+      // for (const i in objs) {
+      //   let obj = objs[i];
+      //   let row = '<tr>';
+      //   for (const x in obj) {
+      //     row += "<td>" + obj[x] + "</td>";
+      //   }
+      //   row += '</tr>'
+      //   text3 += row;
+      // }
+
+      for (const i in objs) {
+        let obj = objs[i];
+        text3 += "<tr><td>" + obj['name'] + "</td><td>" + obj['age'] + "</td></tr>"
+      }
+      let tb_objs = document.querySelector('#tb_objs');
+      tb_objs.innerHTML = text3;
+    }
+  </script>
+</head>
+
+<body>
+  <h3>for</h3>
+  <table id="tb_arr">
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+      </tr>
+    </thead>
+    <tbody id="tb_obj">
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th>NAME</th>
+        <th>AGE</th>
+      </tr>
+    </thead>
+    <tbody id="tb_objs">
+    </tbody>
+  </table>
+</body>
+
+</html>

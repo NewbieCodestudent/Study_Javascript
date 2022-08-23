@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>array2 member</title>
+  <script>
+    console.log('hello array2 member');
+    
+    // {num:1, id:'admin1', pw:'hi111', name:'kim1',tel:'010'}
+    // {num:2, id:'admin2', pw:'hi222', name:'kim2',tel:'020'}
+    // {num:3, id:'admin3', pw:'hi333', name:'kim3',tel:'030'}
+    // {num:4, id:'admin4', pw:'hi444', name:'kim4',tel:'040'}
+    
+    // #1 내가 한 코딩
+    let array = [{num:1, id:'admin1', pw:'hi111', name:'kim1',tel:'010'},
+          {num:2, id:'admin2', pw:'hi222', name:'kim2',tel:'020'},
+          {num:3, id:'admin3', pw:'hi333', name:'kim3',tel:'030'},
+          {num:4, id:'admin4', pw:'hi444', name:'kim4',tel:'040'}]
+
+    window.onload = function() {
+
+      let text='';
+      for (const i in array) {
+        let arr = array[i];
+        let row = '<tr>';
+        for (const x in arr) {
+          row += "<td>" + arr[x] + "</td>";
+        }
+        row += '</tr>'
+        text += row;
+      }
+      let tb_arr = document.querySelector("#tb_arr");
+      tb_arr.innerHTML = text;
+    }
+
+    // #2 강사님이 한 코딩
+
+    window.onload = function () {
+            let tb_objs = document.querySelector("#tb_objs");
+            // console.log(tb_objs);
+            
+            let rows = "";
+         
+            for (const i in vos) {
+                let vo = vos[i];
+                console.log(vo.num, vo.id, vo.pw, vo.name, vo.tel);
+                rows += "<tr><td>"+vo.num+"</td><td>"+vo.id+"</td><td>"+vo.pw+"</td><td>"+vo.name+"</td><td>"+vo.tel+"</td></tr>";
+            }
+
+            tb_objs.innerHTML = rows;
+
+        };
+
+  </script>
+</head>
+<body>
+  <h3>array2 member</h3>
+  <table>
+    <thead>
+      <tr>
+        <th>NUM</th>
+        <th>ID</th>
+        <th>PW</th>
+        <th>NAME</th>
+        <th>TEL</th>
+      </tr>
+    </thead>
+    <tbody id="tb_arr">
+    </tbody>
+  </table>
+</body>
+</html>

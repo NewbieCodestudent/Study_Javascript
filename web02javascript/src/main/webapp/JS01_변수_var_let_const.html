@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>변수 var_let_const</title>
+    <script>
+        console.log("Hello...");
+
+        // var 변수, 블럭을 벗어나서도 사용이 된다.
+        var a = 10;
+        console.log(a);
+        var a = 100; // 동일한 변수를 선언할 수 있다. 값이 덮어씌어짐.
+        console.log(a);
+        // var변수는 var표기값이 없는 변수선언가능.
+        // var과 유사하지만 함수와 연관해서 주의해야 한다.
+        x = 10;
+
+        // let 변수, 블럭을 벗어날수 없는 변수
+        let b = 10;
+        // let b = 20; 동일한 변수를 선언할 수 없다.
+        b = 20;
+        console.log(b);
+
+        // const 변수, 블럭을 벗어날수 없는 변수
+        // const : 상수 = 선언과 동시에 초기화를 해야 한다.
+        const c = 'aaa';
+        // const c = 'aaa';  동일변수 선언도 불가하다.
+        console.log(c);
+        // c = 'lee';   error : readonly로 한번 선언하면 수정이 불가하다.
+        // console.log(c);
+    </script>
+</head>
+<body>
+    <h1>var</h1>
+    <h1>let</h1>
+    <h1>const</h1>
+</body>
+</html>

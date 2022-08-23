@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object6</title>
+    <script>
+        console.log("Hello Object6...");
+
+        // extends(상속)
+        // 자바스크립트는 다중상속을 지원하지 않는다...
+
+        class Person {
+            name = "kim";
+            constructor() {
+                console.log("Person()...");
+            }
+            sleep() {
+                console.log("Sleep()...");
+            }
+        }
+        let p = new Person();
+        console.log(p);
+        console.log("==============================");
+
+        class Student extends Person {
+            kor = 99;
+            constructor() {
+                super(); // 자녀 class 내 super() 선언하여 부모 호출
+                console.log("Student()...");
+            }
+            study() {
+                console.log("Study()...", this.name); // 부모의 변수를 가져와서 사용
+            }
+        }
+        let st = new Student();
+        console.log(st);
+        st.sleep(); // 부모의 매서드를 호출
+        st.study(); // 자신의 매서드를 호출
+
+        console.log("==============================");
+        class Car {
+            model = "NoModel";
+            constructor(model) {
+                console.log("Car()...");
+                this.model = model;
+            }
+            start() {
+                console.log("Start()...");
+            }
+        }
+        let c = new Car("BMW");
+        console.log(c);
+
+        class Bus extends Car {
+            // constructor를 작성하지 않으면 부모인 Car에 "HD"가 넘어가서 model에 들어간다.
+            stationCount = 20;
+            open() {
+                console.log("Open()...");
+            }
+        }
+        let b = new Bus("HD");
+        console.log(b);
+        b.open();
+        b.start();
+    </script>
+</head>
+
+<body>
+    <h3>Object6</h3>
+</body>
+
+</html>

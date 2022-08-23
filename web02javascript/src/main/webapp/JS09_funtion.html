@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funtion</title>
+    <script>
+        console.log("Hello Funtion...");
+
+        // 1. arguments, return 값이 없는 형식
+        function sleep() {
+            console.log("sleep()...");
+        }
+        sleep();
+        console.log("==========================");
+        
+        //2. aruments는 없지만 return이 있는 형식
+        function sleep2() {
+            console.log("sleep2()...");
+            return 0;  // 리턴값은 숫자, 문자역, 객체, 배열, 함수 등.... 다양하게 올 수 있다.
+        }
+        let result = sleep2();
+        console.log("result : " + sleep2());
+        console.log("==========================");
+        
+        //3. aruments는 있지만 return이 없는 형식
+        function sleep3(x) {
+            console.log("sleep3()...", x);
+        }
+        sleep3();
+        sleep3(3); // 모든 리터널를 인자로 전달가능
+        sleep3("kim");
+        console.log("==========================");
+
+        //4. aruments, return이 모두 있는 형식
+        function sleep4(x) {
+            // if (x==undefined) {
+            //     x=1;
+            // }
+            x ||= 1;
+            // 'x = x || 1;'  자바스크립트는 논리연산을 변수선언에 사용할 수 있다.
+            // ??= undefined 하고 null 인지만 확인한다.
+            console.log("sleep4()...", x);
+            return [x*11,x*22,x*33];
+        }
+        console.log(sleep4());
+        sleep4(10);
+        console.log("result : " + sleep4(10));
+
+
+        // 참고 : ?.
+        // 객체의 속성을 접근할 때 . 연산자 대신에 ?. 연산자를 사용하면,
+        // 해당 객체가 nullish 즉, undefined나 null인 경우에
+        // TypeError 대신에 undefined를 얻게된다.
+        // user?.address?.street
+        // undefined
+        // arr = null;
+        // arr?.[0]
+        // undefined
+        
+
+
+    </script>
+</head>
+<body>
+    <h3>Funtion</h3>
+</body>
+</html>

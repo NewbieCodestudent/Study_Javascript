@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object3</title>
+    <script>
+        console.log("Hello Object3...");
+
+        // class 선언, public & private field(변수)
+        // public & private method(매소드)
+
+        class Student {
+            // console.log("Student");
+            // class안에 바로 실행문이 들어올 수 없다.
+            // #1. 변수선언
+            // #1-1. class 내부에 바로 선언
+            kor = 99; // EX2022 public
+            #tel = "010"; // EX2022 private
+              // 은닉하는 방법(private로 get,set를 통해 사용할 수 있다.)
+            constructor () {
+                console.log("Student()...");
+                // #1-2. class constructor 내부에 선언
+                this.name = "lee"; // ES6 public
+                // this._email = "aaa@aaa.com" ES6 private
+            }
+
+            // #2. 매소드
+            // #2-1. public 매소드
+            Study() {
+                console.log("Student Study()...");
+                this.#yaja();
+            }
+            // #2-2. private 매소드
+            #yaja(){
+                console.log("Student Study yaja()...");
+            }
+
+            // #2-3. 리턴이 있는 매소드
+            firstTest() {
+                console.log("firstTest()...");
+                return 1;
+            }
+        }
+
+        let st = new Student();
+        st.num = 11;
+        // 클래스 호출
+        console.log(st);
+        // 매소드 호출
+        st.Study();
+        console.log(st.firstTest());
+
+        console.log("==============================");
+        class Person {
+            age = 35;
+            #male = "man";
+            constructor () {
+                console.log("Person()...");
+            }
+
+            sleep() {
+                console.log("Person Sleep()...");
+                this.#natJam();
+            }
+            #natJam(){
+                console.log("Person Sleep natJam()...");
+            }
+
+            eat(food_name) {
+                console.log("eat()...", food_name);
+                return ['7시', '12시', '18시'];
+            }
+
+        }
+        // class는 반드시 앞에 new를 붙여서 call 해야한다.
+        let p = new Person();
+        p.name = "kim"
+        console.log(p);
+        p.sleep();
+        let arr_eatTime = p.eat("hambuger")
+        for (const i in arr_eatTime) {
+            console.log(arr_eatTime[i]);
+        }
+        
+        console.log("==============================");
+        class Car {
+            model = "MBW";
+            #driver_name = "lee";
+            constructor () {
+                console.log("Car()...");
+            }
+
+            start(){
+                console.log("Car Start()...");
+                this.#turbo();
+            }
+            #turbo() {
+                console.log("Car Start tubo()...");
+            }
+
+            fillOil(money) {
+                console.log("fillOil(money)...", money);
+                return String(money/1800) + "L";
+            }
+        }
+        let c = new Car();
+        c.price = 300;
+        console.log(c);
+        c.start();
+        console.log(c.fillOil(50000));
+    </script>
+</head>
+<body>
+    <h3>Object3</h3>
+</body>
+</html>

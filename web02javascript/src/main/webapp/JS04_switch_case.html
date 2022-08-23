@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>switch_case</title>
+  <script>
+    console.log("hello switch case");
+
+    window.onload = function () {
+      let avg = 99.7;
+      let grade = 'A';
+      console.log(avg / 10); // 정수로 변환해야 한다.
+      console.log(parseInt(avg / 10));
+      switch (parseInt(avg / 10)) {
+        case 10: case 9:
+          grade = 'A';
+          break;
+        case 8:
+          grade = 'B';
+          break;
+        case 7:
+          grade = 'C';
+          break;
+        case 6:
+          grade = 'D';
+          break;
+        default:
+          grade = 'F';
+          break;
+      }
+      console.log("avg : " + avg);
+      console.log("grade : " + grade);
+
+      let p_avg = document.querySelector("#p_avg")
+      p_avg.innerHTML = "<b>avg</b> : " + avg;
+      let p_grade = document.querySelector("#p_grade")
+      p_grade.innerHTML = "<b>grade</b> : " + grade;
+    };
+  </script>
+</head>
+
+<body>
+  <div>
+    <p id="p_avg">switch_case</p>
+    <p id="p_grade">switch_case</p>
+  </div>
+</body>
+
+</html>

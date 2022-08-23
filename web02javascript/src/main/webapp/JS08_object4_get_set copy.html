@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object4</title>
+    <script>
+        console.log("Hello Object4...");
+
+        // getter & setter
+
+        class Student {
+            #name = "";
+            #kor = 0;
+            #eng = 0;
+            #math = 0;
+            constructor (name = "noName", kor=100, eng=100, math=100) {
+                console.log("Student()...");
+                this.#name = name;
+                this.#kor = kor;
+                this.#eng = eng;
+                this.#math = math;
+            }
+
+        }
+
+        let st = new Student(); // defalt값
+        st = new Student("lee",11,22,33);
+        console.log(st);
+
+
+
+        console.log("==============================");
+        class Person {
+            #num = 0;
+            #name = "noName";
+            #age = 0;
+            constructor (num = 0, name = "noname", age = 0) {
+                console.log("Person()...");
+                this.#num = num;
+                this.#name = name;
+                this.#age = age;
+            }
+        }
+        let p = new Person();
+        p = new Person(1, "yang", 33);
+        console.log(p);
+        
+
+
+        console.log("==============================");
+        class Car {
+            #price = 0;
+            #model = "noModel";
+            #driver_name = "noName";
+            constructor () {
+                console.log("Car()...");
+            }
+            carInfo() {
+                console.log("차량정보 : 가격(" + this.#price + "), 모델(" + this.#model + "), 운전자 : (" + this.#driver_name + ")");
+            }
+            // getter & setter
+            set Price(price){
+                this.#price = price;
+            }
+            get Price(){
+                return this.#price;
+            }
+            set Model(model){
+                this.#model = model;
+            }
+            get Model(){
+                return this.#model;
+            }
+            set Driver_name(driver_name){
+                this.#driver_name = driver_name;
+            }
+            get Driver_name(){
+                return this.#driver_name;
+            }
+            // 참고 : setPrice(price){} 형태로 사용시 호출을 c.setPrice(price);로 해야한다.
+        }
+        let c = new Car();
+        c.Price = 1000;
+        c.setModel = "audi";
+        c.setDriver_name = "lee";
+        console.log(c.getPrice, c.getModel, c.getDriver_name);
+        console.log(c);
+        c.carInfo();
+    </script>
+</head>
+<body>
+    <h3>Object4</h3>
+</body>
+</html>

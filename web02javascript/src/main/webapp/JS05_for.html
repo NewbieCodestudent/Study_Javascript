@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>for</title>
+  <script>
+    console.log("hello_for");
+    for (let i = 0; i < 10; i++) {
+      console.log(i);
+    }
+    console.log('===================');
+
+    // forin : in에 object 또는 array의 type이 와야한다.
+    let arr = [11, 22, 33]
+    for (const i in arr) {
+      console.log(arr[i]);
+    }
+    let obj = { name: 'kim', age: 33 }
+    for (const key in obj) {
+      console.log(obj[key]);
+    }
+
+    arr.forEach(x => {
+      console.log(x);
+    });
+
+  </script>
+</head>
+
+<body>
+  <h3>for</h3>
+</body>
+
+</html>

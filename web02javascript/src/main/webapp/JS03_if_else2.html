@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>if_else</title>
+  <script>
+    // 함수를 창에 실행시키기
+
+    // 1. window.opload를 한다.
+    window.onload = function() {
+      let avg = 80;
+      let grade;
+      if (avg >= 90) {
+        grade = "A";
+      } else if (avg >= 80) {
+       grade = "B";
+      } else if (avg >= 70) {
+       grade = "C";
+      } else if (avg >= 70) {
+       grade = "D";
+      } else {
+       grade = "F";
+      }
+      console.log("avg : " + avg);
+      console.log("grade : " + grade);
+
+      let p_avg = document.querySelector("#p_avg") // id에 사용
+      // let p_avg = documen/t.querySelectorAll // class에 사용
+      // console.log(p_avg); 주소확인
+      p_avg.innerHTML = "<b>avg</b> : " + avg;
+      let p_grade = document.querySelector("#p_grade") // id에 사용
+      p_grade.innerHTML = "<b>grade</b> : " + grade;
+    };
+  </script>
+</head>
+<body>
+  <div>
+    <!-- 2. id를 지정한다. -->
+    <p id="p_avg">if_else</p>
+    <p id="p_grade">if_else</p>
+  </div>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>operator</title>
+  <script>
+    console.log("Hello operator...");
+    //1. 산술(+, -, *, /, %, **)
+    console.log("산술");
+    x = 20;
+    y = 10;
+    console.log(x + y);
+    console.log(x - y);
+    console.log(x * y);
+    console.log(x / y);
+    console.log(x % y);
+    console.log(x**2);
+    console.log("======================");
+    
+    //2. 할당, 대입, 복합할당 (=, +=, -=, &=, ,,,)
+    console.log("할당, 대입, 복합할당");
+    console.log(x += y);
+    console.log(x -= y);
+    console.log(x *= y);
+    console.log(x /= y);
+    console.log(x &= y);
+    console.log("======================");
+    
+    //3. 비트연산(&, |, ^)
+    console.log("비트연산");
+    console.log(x&y);
+    console.log(x|y);
+    console.log(x^y);
+    console.log("======================");
+    
+    //4. 비교(==, !=, >, <, >=, <=)
+    console.log("비교");
+    console.log(x==y);
+    console.log(x!=y);
+    console.log(x>=y);
+    console.log(x<=y);
+    console.log(x<y);
+    console.log(x>y);
+    console.log("======================");
+    
+    //5. 증감연산(++, --)
+    console.log("증감연산");
+    for (let x = 0; x < 3; x++) {
+      console.log(x);
+    }
+    for (let x = 3; x > 0; x--) {
+      console.log(x);
+    }
+    console.log("======================");
+    
+    //6. 논리연산(&& ||)
+    console.log("논리연산"); // 자바와 달리 boolean 타입이 아닌 여러 타입이 들어갈 수 있다.
+    console.log(x==0 && true);
+    console.log(x==20 && true);
+    console.log(x==0||y!=10);
+    console.log(x!=0||y==10);
+    console.log(x!=0||y!=10);
+    console.log(""||"kim");
+    console.log(0||1);
+    console.log(undefined||"hello");
+    
+    let name;
+    name = "yang";
+    let c = name || "lee";
+    console.log(c);
+
+    function test(params) { // params = 0 디폴트값 설정가능.
+            // params = params || 0;
+            params ||= 0; // ECMA2020 추가된 문법
+            console.log("aaa:"+params);
+    }
+    test(); // 함수를 언제든지 call 할 수 있고 변수가 없으면 undefined로 반환된다.
+    test(123);
+
+    // ★★★ 할당되지 않는 경우 출력
+    function test2(params) {
+            // params = params || [1,2,3];
+            params ||= [1,2,3];
+            console.log("bbb:"+params[0]);
+    }
+    test2();
+    test2([44,55,66]);
+
+    console.log("======================");
+    //7. 삼항연산(? : )
+    console.log(x>10 ? 'A' : 'B');
+
+     //8. ECMA2020 : ?. , ??, ??=
+     let user = {name : {first : "JaeSeok", last : "lee"},
+                    //  address : {street : ""}
+                    };
+        console.log(user.name.first);
+        console.log(user.address); // undefined
+        console.log(user.address || {address : {street : "aaaa"}}); // 복잡하기 때문에 ?를 활용하여 대체
+        // console.log(user.address.street); // error : undefined.street로 검색되기 때문이다.
+        console.log(user.address?.street); // ?. 없는 값이 나오면 undifined로 출력
+        console.log(user.address?.street || "Ori_1"); // undifined, null, 0, 빈문자면 Ori를 출력
+        console.log(user.address?.street ?? "Ori_2"); // undifined, null이면 Ori를 출력
+
+        let street = user.address?.street;
+        street ??= "Ori_3"
+        console.log(street);
+
+  </script>
+</head>
+<body>
+  <h1>Operator</h1>
+</body>
+</html>

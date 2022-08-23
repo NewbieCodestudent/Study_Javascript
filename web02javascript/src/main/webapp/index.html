@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 자바스크립트 -->
+    <script src="main.js"> // 자바스크립트 문서를 호출
+    </script>
+
+    <script> // 직접 자바코딩을 입력
+        window.onload = function() {  // 전체가 실행이 되고 마지막에 실행
+            console.log("onload...");
+        };
+        // var변수와 변수의 타입
+        // var변수는 생략이 가능하지만 선언시 항상 var을 붙이도록 할 것
+        var a = 10;
+        console.log(console.log(a));
+        console.log(typeof(a));
+        console.log("==================")
+
+        var a = "kim";  // 자바스크립트는 "",'' 모두 String 이다.
+                        // var변수는 같은 변수라도 또 선언할 수 있다.
+        console.log(a);
+        console.log(typeof(a));
+        console.log("==================")
+
+        var a = 3.14;
+        console.log(a);
+        console.log(typeof(a));
+        console.log("==================")
+
+        var b; // 선언만 하면 undefined로 출력된다.
+        console.log(b);
+        console.log(typeof(b));
+        console.log("==================")
+        
+        var obj = null;  // null로 초기화 하면 object로 인식
+        console.log(obj);
+        console.log(typeof(obj));
+        console.log("==================")
+
+        var arr = [];  // []로 초기화 하면 배열
+        console.log(arr);
+        console.log(typeof(arr));
+        console.log("==================")
+
+        var vo = {};  // {}로 초기화하면 object로 인식
+        console.log(vo);
+        console.log(typeof(vo));
+        console.log("==================")
+
+        var fn = function(){};  // function(){} 함수타입(최상위 객체)
+        console.log(fn);
+        console.log(typeof(fn));
+        console.log("==================")
+
+        var bool = true;
+        console.log(bool);
+        console.log(typeof(bool));
+        console.log("==================")
+        
+        console.log("타입변환");
+        console.log(String(bool)); // boolean 타임을 string 타입으로 변환하여 출력
+        console.log(typeof(String(bool)));   // boolean >> String
+        console.log(typeof(Number("123")));  // String >> Number
+        console.log(typeof(Number(true)));  // boolean(true) >> Number(1)
+        console.log(Number("abc"));
+        console.log(typeof(NaN));  // NaN 번호가 아니다 이지만 Number에 속한다...
+        console.log(typeof(Number("abc")));
+        console.log("==================")
+        
+        console.log("boolean type");
+        console.log(Boolean("abe")); // 자바스크립트는 boolean 타입에 문자, 숫자, 공백이 올 수 있다.
+        console.log(Boolean({}));
+        console.log(Boolean(10));
+        console.log(Boolean("  "));
+        console.log(Boolean(""));   // 0 또는 내용이 없다면 false로 출력된다.
+        console.log(Boolean(null));
+        console.log(Boolean(undefined)); // undefined는 없다는 것으로 false이다.
+        console.log(Boolean(NaN));
+        console.log(Boolean(0));
+
+    </script>
+</head>
+<body>
+    <h1>index page</h1>
+</body>
+</html>
