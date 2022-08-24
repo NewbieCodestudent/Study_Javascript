@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function3</title>
+    <script>
+        console.log("Hello Function3...");
+
+        function eat(x) {
+            console.log("eat()...", x);
+        }
+
+        // arguments를 주는 방법
+        // 1. 값을 할당
+        eat(11);
+        eat("kim");
+        
+        // 2. 배열
+        eat([11,22,33]);
+        eat(["kim", 33]);
+        eat(new Array(10)) // 비어있는 10칸짜리 배열
+
+        // 3. object
+        eat({name : "kim", agr : 33});
+        eat(new Object());
+
+        // 4. function(함수)
+        eat(function(){
+            console.log("fn()...");
+        }); 
+        // 4-1. 함수안에 함수를 call하기
+        function count() {
+            console.log("count()...");
+        }
+        eat(count);
+        // 4-2. arrow function
+        eat(()=>{
+            console.log("arrow fn()...");
+        });
+        // 4-3. 익명함수
+        function Person(){};
+        let p = new Person();
+        p.user_name = "adminl";
+        eat(p);
+        
+        // 5. class
+        class Student{kor = 100; eng = 99;}
+        let st = new Student;
+        eat(st);
+
+
+        </script>
+</head>
+<body>
+    <h3>Function3</h3>
+</body>
+</html>

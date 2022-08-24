@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function2</title>
+    <script>
+        console.log("Hello Function2...");
+
+        // arguments를 설정하지 않았는데 call할때 arguments를 부여할경우
+        function run() {
+            console.log("run()...");
+            // 결과값을 보면 배열로 arguments를 받아오기 떄문에 배열로 활용가능...
+            console.log(arguments);
+            console.log("arguments.length : " + arguments.length);
+            // console.log(arguments[0]);
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+        }
+
+        run();
+        run(11);
+        run(11, 22, 33);
+
+        console.log("==========================================");
+        // 설정한 arguments보다 많이 들어오면 추가적인 배열로 넣어주기 때문에
+        // for 문을 통해서 출력할 수 있다.
+        function stop(x, y){
+            console.log("stop()...");
+            for (let i = 0; i < arguments.length; i++) {
+                console.log(arguments[i]);
+            }
+            /* 실무에서 사용하는 코딩
+            추가적으로 넣을 것을 예상하고 미리 코딩...
+            var tx = arguments[2] || 100;
+            console.log(tx);
+            if(!arguments[2]) {
+            }
+            */
+        }
+        
+        stop(44,55);
+        stop(44,55,66,77);
+        console.log("==========================================");
+
+        // arguments를 선언한 것 보다 적게 입력하면 undefined로 출력한다.
+        function sleep(a,b,c,d) {
+            console.log("sleep()...",a,b,c,d);
+        }
+        sleep(11,22,33);
+
+        </script>
+</head>
+<body>
+    <h3>Function2</h3>
+</body>
+</html>
