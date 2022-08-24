@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Function</title>
+    <script>
+        console.log("Hello Return Function...");
+
+        function test(x) {
+            console.log("test1()...");
+            if(!x) return 0;  // 함수의 break와 같은 역활
+            console.log("test2()...");
+            return 11;
+        }
+        let result = test();
+        console.log(result);
+        console.log("==============================");
+
+        // return에는 여러 양식이 올 수 있다.
+        function start() {
+            console.log("start()...");
+            // return 11;
+            // return "kim";
+            // return ["kim","kim","kim"];
+            // return {name : "kim", age : 30, tel : 010};
+            // return function(){console.log("return...");}
+            // return ()=>{console.log("return...");}
+            return (x)=>{console.log("return...",x);}
+            
+        }
+        let rs = start();
+        console.log(rs);
+        rs(); // return 값
+        rs(100); // return x에 100를 할당
+
+        </script>
+</head>
+<body>
+    <h3>Return Function</h3>
+</body>
+</html>

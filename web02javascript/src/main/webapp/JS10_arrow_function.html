@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrow Function</title>
+    <script>
+        console.log("Hello Arrow Function...");
+
+        let arr = [11,22,33];
+
+        // forEach
+        // foreach 첫번째는 item(요소), 두번째는 index(순서)
+        arr.forEach(function(item,x){
+            console.log(item,x);
+        });
+        arr.forEach(()=>{ // 정보를 가져오지 않지만 루프는 배열의 수만큼 실행
+            console.log("aaa");
+        });
+        arr.forEach((item)=>{
+            console.log(item);
+        });
+        arr.forEach(item=>{ // ()생략가능, 비권장
+            console.log(item);
+        });
+        // arr.forEach( item => console.log(item)); 이렇게 한줄로 정리 가능
+        arr.forEach((x,y)=>{
+            console.log(x,y);
+        });
+        // arr.forEach( (item, index) => console.log(item, index)); 이렇게 한줄로 정리 가능
+        console.log("===========================");
+        
+        // map
+        // map 첫번째는 item(요소), 두번째는 index(순서)
+        let arr_map = arr.map(function(item, x){
+            console.log(item, x);
+            return item*10;
+        });
+        console.log(arr_map);
+
+        arr_map = arr.map((item, x)=>{
+            console.log(item, x);
+            return item*100;
+        });
+        console.log(arr_map);
+
+        const names = [
+        'Yangssem',
+        'kim',
+        'lee',
+        'John'
+        ];
+        // 배열의 map과 arrow function을 통해서 응용
+        let arr_names_length = names.map(name => name.length);
+        console.log(arr_names_length);
+        let arr_names_hello = names.map(name => "Hello " + name);
+        console.log(arr_names_hello);
+
+        console.log("===========================");
+
+        // filter
+        // 조건식에 참인 요소만 넣어서 반환해 주는 역활을 한다.
+        arr = [0,1,2,3,4,5];
+
+        let arr_even = arr.filter(item => item%2==0);
+        console.log(arr_even);
+
+        let names_length = names.filter(name => name.length<=4);
+        console.log(names_length);
+
+        </script>
+</head>
+<body>
+    <h3>Arrow Function</h3>
+</body>
+</html>

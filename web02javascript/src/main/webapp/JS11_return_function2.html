@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Return Function2</title>
+    <script>
+        console.log("Hello Return Function2...");
+
+        function start() {
+            console.log("start()...");
+            let count = 0;
+            console.log("count : " + count);
+            return (x)=>{
+                ++count;
+                console.log("return...", x ,"count : " + count);
+            }
+        }
+        let rs = start();
+        console.log(rs);
+        rs();
+        rs(77);
+        rs(88);
+        rs(99);
+        rs(100);
+        // start 함수가 1번만 실행되기 때문에 리턴이 누적되어 count 값이 점점 커진다.
+        // closure function(클로저 함수)
+
+        console.log("====================");
+
+        // javascript의 문법
+        // 함수() : 기능을 call
+        // 함수()() : 기능과 return을 call
+        start()();
+        start()(11);
+        start()(22);
+        // start 함수가 매번 실행되기 때문에 return의 count가 증가하지 않는다.
+
+        // 함수 안에 함수 : 클로저
+        // https://developer.mozilla.org/ko/docs/Web/JavaScript/Closures
+
+        </script>
+</head>
+<body>
+    <h3>Return Function2</h3>
+</body>
+</html>

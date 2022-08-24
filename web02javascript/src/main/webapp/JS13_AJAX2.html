@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX2</title>
+    <script>
+        console.log("AJAX2...");
+        // 중복체크 만들기
+
+        // 2. 출력함수 만들기
+        window.onload = function() {
+          console.log("onload...");
+          // 3. body에서 버튼가져오기
+          let btn_idCheck = document.querySelector("#btn_idCheck");
+
+          // 4. onclick 함수생성 : 버튼을 클릭하면 실행
+          btn_idCheck.onclick = function(event){
+            console.log("onclick");
+            
+            let user_id = document.querySelector("#user_id");
+            console.log(user_id.value);
+
+            let req = new XMLHttpRequest();
+
+            req.addEventListener("load", function(){
+                let txt_json = this.responseText;
+                let obj_json = JSON.parse(txt_json);
+                let idCheck = document.querySelector("#btn_idCheck");
+                let result = document.querySelector("#result");
+
+                console.log(obj_json);
+                console.log(obj_json.result);
+                
+                let txt = "";
+                if (obj_json.result === 'Not Ok') {
+                  txt = "사용중";
+                } else {
+                  txt = "사용가능";
+                }
+
+                result.innerHTML = txt;
+            });
+            req.open("GET", "http://localhost:8090/web02javascript/js13_json_idCheck.jsp?user_id=admin");
+            req.send();
+
+            // form으로 되어 있는 형식일 경우 반복하기 위해 사용
+            event.preventDefault();
+            event.stopPropagation();
+          };
+        };
+
+    </script>
+</head>
+<body>
+    <h3>AJAX2 idCheck</h3>
+    <!-- 1. 틀만들기 -->
+    <form action="js13.txt" method="get">
+      <input type="text" id="user_id" name="user_id" value="admin">
+      <input type="button" id="btn_idCheck" value="idCheck">
+      <input type="submit">
+      <span id="result"></span>
+    </form>
+</body>
+</html>

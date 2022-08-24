@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX</title>
+    <script>
+        console.log("AJAX...");
+        let req = new XMLHttpRequest();
+
+        req.addEventListener("load", function(){
+            console.log(this.responseText);  // Get한 파일을 텍스트 형식으로 출력
+            let txt_json = this.responseText;
+            let obj_json = JSON.parse(txt_json);
+              // json txt 파일에 글자를 script형식으로 가져온다.
+              // 결과를 보면 object로 형성된 것을 볼 수 있다.
+            console.log(obj_json.name, obj_json.age);
+              // object이기 때문에 .를 이용해서 값을 가져올 수 있다.
+
+            let name = document.querySelector("#name");
+            console.log(name);
+              // 결과갑이 <h3 id="name">kim</h3>이 실행되는 것으로 보아
+              // 해당 함수는 body를 읽은 후 실행된다.
+            name.innerHTML = obj_json.name;
+            age.innerHTML = obj_json.age;
+        });
+
+        // req.open("GET", "http://127.0.0.1:5500/js13.txt");
+        req.open("GET", "http://127.0.0.1:5500/js13_json.txt");
+        // json 형식의 텍스트에서는 key값에 ""를 써야 활용할 수 있다.
+        req.send();
+        
+    </script>
+</head>
+<body>
+    <h3>AJAX</h3>
+    <h3 id="name"></h3>
+    <h3 id="age"></h3>
+</body>
+</html>
